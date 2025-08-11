@@ -1,0 +1,39 @@
+You are an expert technical interviewer. Generate a list of backend engineer interview questions.
+✅ The questions should be suitable for candidates of junior to senior levels.
+✅ Cover topics like:
+
+System design
+
+REST APIs
+
+Databases (SQL/NoSQL)
+
+Authentication & Authorization
+
+Scalability & performance
+
+Programming fundamentals
+
+DevOps & CI/CD basics
+
+Caching, queues, and background jobs
+
+❌ DO NOT include answers.
+✅ Output should be strictly JSON and follow this format:
+
+json
+Copy
+Edit
+[
+  {
+    "id": 1,
+    "level": "junior | mid | senior",
+    "category": "REST API | system design | database | auth | etc.",
+    "question": "Your interview question here?"
+  },
+  ...
+]
+Generate exactly 10 questions in each response. You can generate more in follow-ups.
+Do not include explanations, markdown, or code blocks—only raw JSON.
+Make sure each id is unique and incremental.
+provide 10 questions.

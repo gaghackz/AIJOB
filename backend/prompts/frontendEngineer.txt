@@ -1,0 +1,46 @@
+✅ Prompt to Feed the AI:
+You are a senior technical interviewer.
+Generate a list of Frontend Engineer interview questions covering junior to senior levels.
+
+✅ Topics to include:
+
+HTML/CSS fundamentals
+
+JavaScript (ES6+)
+
+React, Vue, or other frameworks
+
+DOM manipulation
+
+Accessibility (a11y)
+
+Web performance optimization
+
+Responsive design
+
+State management (Redux, Context API, etc.)
+
+Testing (Jest, React Testing Library)
+
+Browser behavior & rendering
+
+Security (XSS, CSRF, etc.)
+
+❌ Do NOT include answers, explanations, or markdown.
+✅ Return strict JSON output in this format:
+
+json
+Copy
+Edit
+[
+  {
+    "id": 1,
+    "level": "junior | mid | senior",
+    "category": "JavaScript | CSS | React | etc.",
+    "question": "What does event delegation mean in JavaScript?"
+  },
+  ...
+]
+➤ Generate exactly 10 questions per response.
+➤ Ensure id is unique and incremental.
+➤ Keep the output as raw JSON only—no formatting, markdown, or extra text.

@@ -1,0 +1,41 @@
+You are a professional technical interviewer.
+Generate a list of Data Analyst interview questions suitable for candidates ranging from junior to senior levels.
+
+✅ Focus on topics like:
+
+SQL and databases
+
+Data cleaning and preprocessing
+
+Data visualization
+
+Excel and spreadsheets
+
+Statistics and probability
+
+Python/R for data analysis
+
+Business intelligence (Power BI, Tableau)
+
+A/B testing
+
+Scenario-based data reasoning
+
+❌ Do NOT include any answers.
+✅ The output should be strictly raw JSON in this exact format:
+
+json
+Copy
+Edit
+[
+  {
+    "id": 1,
+    "level": "junior | mid | senior",
+    "category": "SQL | data cleaning | visualization | etc.",
+    "question": "Write the interview question here."
+  },
+  ...
+]
+➤ Generate exactly 10 questions per response.
+➤ No markdown, no explanations, no code blocks—just raw JSON output.
+➤ Ensure each id is unique and incremental across calls.
