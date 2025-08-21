@@ -1,8 +1,8 @@
 "use client"
-import Image from "next/image";
 import React from 'react';
-import Orb from '../components/Orb';
-import SpotlightCard from "@/components/SpotlightCard";
+import Orb from '@/components/Orb';
+import LightRays from '@/components/LightRays';
+import SpotlightCard from '@/components/SpotlightCard';
 import {
   Home,
   Compass,
@@ -14,6 +14,7 @@ export default function App() {
   return (
     // Main container with full viewport height and flex column layout
     <div className="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans">
+     
       
       {/* Header section */}
       <header className="bg-slate-950 shadow-sm p-4 md:p-6 flex justify-between items-center border-b sticky top-0 z-50">
@@ -45,44 +46,48 @@ export default function App() {
         </nav>
       </header>
 
-      {/* Main content area, which will grow to fill available space */}
+      {/* Main content area */}
       <main className="bg-slate-900 flex-1 p-6 md:p-10 flex flex-col items-center justify-center text-center">
-        <div className="mt-9 absolute inset-0 z-0 ">
-          <Orb
-            hoverIntensity={0.5}
-            rotateOnHover={true}
-            hue={0}
-            forceHoverState={false}
-          />
-        </div>
-
-        {/* Hero Section */}
         
-        <section className="z-10 max-w-4xl w-full h-screen flex flex-col items-center justify-center ">
-          <h1 className="mt-10 text-4xl md:text-7xl font-extrabold text-zinc-50 mb-4 leading-tight">
+        {/* Hero Section */}
+        <section className="relative z-10 max-w-4xl w-full h-screen flex flex-col items-center justify-center">
+          {/* Orb background, absolutely positioned inside hero */}
+          <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+            <div className="relative w-[700px] h-[1200px] pointer-events-auto">
+              <Orb
+                hoverIntensity={0.8}
+                rotateOnHover={true}
+                hue={0}
+                forceHoverState={false}
+              />
+            </div>
+          </div>
+          
+          {/* Hero Content */}
+          <h1 className="font-serif mt-10 text-4xl md:text-7xl font-extrabold text-zinc-50 mb-4 leading-tight z-10">
             AI Interview Coach
           </h1>
-          <p className="text-lg md:text-xl text-zinc-200 mb-8">
+          <p className="text-lg md:text-xl text-zinc-200 mb-8 z-10">
             Train with AI. Interview with confidence.
           </p>
           <a
             href="#"
-            className=" mb-50 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition transform hover:scale-105 duration-300"
+            className="mb-50 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition transform hover:scale-105 duration-300 z-10"
           >
             Get Started
           </a>
         </section>
-
+        
         {/* Feature Cards Section */}
         <section className="h-screen mt-16 w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6">
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(25, 114, 255, 0.2)">
-            // Content goes here
+            {/* Content goes here */}
           </SpotlightCard>
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(25, 114, 255, 0.2)">
-            // Content goes here
+            {/* Content goes here */}
           </SpotlightCard>
           <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(25, 114, 255, 0.2)">
-            // Content goes here
+            {/* Content goes here */}
           </SpotlightCard>
         </section>
       </main>
