@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import Orb from '@/components/Orb';
-import LightRays from '@/components/LightRays';
+import LightRays from '@/components/Galaxy';
 import SpotlightCard from '@/components/SpotlightCard';
 import {
   Home,
@@ -9,15 +9,15 @@ import {
   Mail,
   LogIn
 } from 'lucide-react';
+import Link from 'next/link';
+import Galaxy from '@/components/Galaxy';
 
 export default function App() {
   return (
     // Main container with full viewport height and flex column layout
-    <div className="flex flex-col min-h-screen bg-gray-50 text-gray-800 font-sans">
-     
-      
+    <div className="flex flex-col min-h-screen bg-slate-900  text-gray-800 font-sans relative ">
       {/* Header section */}
-      <header className="bg-slate-950 shadow-sm p-4 md:p-6 flex justify-between items-center border-b sticky top-0 z-50">
+      <header className="fixed top-0 left-0 w-full bg-slate-800/30 backdrop-blur-lg shadow-sm p-4 md:p-6 flex justify-between  border-b z-50">
         <div className="font-extrabold text-2xl text-blue-600 tracking-tight">
           InterviewIQ
         </div>
@@ -47,50 +47,54 @@ export default function App() {
       </header>
 
       {/* Main content area */}
-      <main className="bg-slate-900 flex-1 p-6 md:p-10 flex flex-col items-center justify-center text-center">
-        
-        {/* Hero Section */}
-        <section className="relative z-10 max-w-4xl w-full h-screen flex flex-col items-center justify-center">
-          {/* Orb background, absolutely positioned inside hero */}
-          <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
-            <div className="relative w-[700px] h-[1200px] pointer-events-auto">
-              <Orb
-                hoverIntensity={0.8}
-                rotateOnHover={true}
-                hue={0}
-                forceHoverState={false}
-              />
-            </div>
-          </div>
-          
-          {/* Hero Content */}
-          <h1 className="font-serif mt-10 text-4xl md:text-7xl font-extrabold text-zinc-50 mb-4 leading-tight z-10">
+      <main className="relative flex-1 h-screen snap-y snap-mandatory scroll-smooth">
+
+      {/* Hero Section */}
+      <section className="relative snap-start h-screen flex flex-col items-center justify-center bg-slate-950">
+        <div className="absolute inset-0">
+          <Galaxy
+            mouseRepulsion={true}
+            mouseInteraction={true}
+            density={1}
+            glowIntensity={0.2}
+            saturation={0}
+            hueShift={0}
+          />
+        </div>
+
+        <div className="absolute mt-7 inset-0 flex items-center justify-center z-10">
+          <Orb
+            hoverIntensity={0.8}
+            rotateOnHover={true}
+            hue={0}
+            forceHoverState={false}
+          />
+        </div>
+
+        {/* Hero Content */}
+        <div className="z-20 mt-20 text-center">
+          <h1 className="font-serif text-4xl md:text-7xl font-extrabold text-zinc-50 mb-4 leading-tight">
             AI Interview Coach
           </h1>
-          <p className="text-lg md:text-xl text-zinc-200 mb-8 z-10">
+          <p className="text-lg md:text-xl text-zinc-200 mb-8">
             Train with AI. Interview with confidence.
           </p>
-          <a
-            href="#"
-            className="mb-50 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition transform hover:scale-105 duration-300 z-10"
+          <Link
+            href={"/"}
+            className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition transform hover:scale-105 duration-300"
           >
             Get Started
-          </a>
-        </section>
-        
-        {/* Feature Cards Section */}
-        <section className="h-screen mt-16 w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6">
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(25, 114, 255, 0.2)">
-            {/* Content goes here */}
-          </SpotlightCard>
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(25, 114, 255, 0.2)">
-            {/* Content goes here */}
-          </SpotlightCard>
-          <SpotlightCard className="custom-spotlight-card" spotlightColor="rgba(25, 114, 255, 0.2)">
-            {/* Content goes here */}
-          </SpotlightCard>
-        </section>
-      </main>
+          </Link>
+        </div>
+      </section>
+
+      {/* Feature Cards Section */}
+      <section className="snap-start h-screen bg-amber-400 grid grid-cols-1 md:grid-cols-3 gap-6 items-center justify-center p-10">
+        <SpotlightCard spotlightColor="rgba(25, 114, 255, 0.2)" />
+        <SpotlightCard spotlightColor="rgba(25, 114, 255, 0.2)" />
+        <SpotlightCard spotlightColor="rgba(25, 114, 255, 0.2)" />
+      </section>
+    </main>
 
       {/* Footer section */}
       <footer className="bg-gray-100 py-6 px-4 md:px-6 text-center text-gray-500 border-t border-gray-200">
