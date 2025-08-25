@@ -3,20 +3,15 @@ import React from 'react';
 import Orb from '@/components/Orb';
 import LightRays from '@/components/Galaxy';
 import SpotlightCard from '@/components/SpotlightCard';
-
+import { Button } from '@/components/ui/button';
+import { SignInButton,SignedOut,SignedIn,UserButton } from '@clerk/nextjs';
 import {
-  Home,
-  Compass,
-  Mail,
-  LogIn,
   Clipboard,
   Pencil,
   Flame
-  
 } from 'lucide-react';
 import Link from 'next/link';
 import Galaxy from '@/components/Galaxy';
-import { SP } from 'next/dist/shared/lib/utils';
 
 export default function App() {
   return (
@@ -24,15 +19,23 @@ export default function App() {
     <div className="flex flex-col min-h-screen text-gray-800 font-sans">
 
       {/* Header section */}
-      <header className="fixed top-0 left-0 w-full bg-slate-800/30 backdrop-blur-lg shadow-sm p-4 md:p-6 flex justify-between  border-b z-50">
-        <div className="font-extrabold text-2xl text-blue-600 tracking-tight">
+      <header className="fixed top-0 left-0 w-full bg-slate-800/30 backdrop-blur-lg shadow-sm p-4 md:p-6 flex justify-between z-50">
+        <div className="font-extrabold text-2xl bg-gradient-to-r from-blue-600 via-indigo-400 to-blue-300 text-transparent bg-clip-text tracking-tight">
           InterviewIQ
         </div>
-        <nav className="flex items-center space-x-6">
-          <a href="#" className="flex items-center space-x-2 text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg font-semibold transition-colors duration-300">
-            <LogIn size={16} />
-            <span className="hidden sm:inline">Log In</span>
-          </a>
+        <nav className="flex items-center">
+          <SignedOut>
+            <SignInButton >
+              <div className="flex items-center">
+                <Button className='bg-amber-50 text-blue-600'>Log In</Button>
+              </div>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <div className='flex items-center transform scale-150'>
+              <UserButton/>
+            </div>
+          </SignedIn>
         </nav>
       </header>
 
@@ -69,7 +72,7 @@ export default function App() {
       <h1 className="bg-gradient-to-r font-bebas text-transparent from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-4xl md:text-8xl mb-4 leading-tight">
         AI Interview Coach
       </h1>
-      <p className="font-roboto text-lg md:text-2xl text-zinc-200 mb-8 ">
+      <p className="font-roboto bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-lg md:text-2xl mb-8 ">
         Train with AI. Interview with confidence.
       </p>
       <Link
@@ -83,7 +86,6 @@ export default function App() {
 
   {/* Feature Cards Section */}
 <section className="relative z-0 snap-start h-screen bg-gradient-to-t from-slate-950 to-slate-900">
-  {/* Galaxy stays behind */}
   <div className="absolute inset-0 z-10">
     <Galaxy
       mouseRepulsion={false}
@@ -95,7 +97,7 @@ export default function App() {
     />
   </div>
 
-  {/* Cards container centered */}
+  {/* Cards container */}
   <div className="relative z-20 flex w-full h-full items-center justify-center gap-6">
     <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)">
       <div className="flex h-full flex-col items-center justify-center">
