@@ -8,7 +8,11 @@ import {
   Home,
   Compass,
   Mail,
-  LogIn
+  LogIn,
+  Clipboard,
+  Pencil,
+  Flame
+  
 } from 'lucide-react';
 import Link from 'next/link';
 import Galaxy from '@/components/Galaxy';
@@ -25,23 +29,6 @@ export default function App() {
           InterviewIQ
         </div>
         <nav className="flex items-center space-x-6">
-          <ul className="hidden md:flex items-center space-x-6 text-sm font-medium text-zinc-200">
-            <li>
-              <a href="#" className="hover:text-blue-600 transition duration-300 flex items-center">
-                <Home className="mr-1" size={16} /> Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-600 transition duration-300 flex items-center">
-                <Compass className="mr-1" size={16} /> Explore
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-600 transition duration-300 flex items-center">
-                <Mail className="mr-1" size={16} /> Contact Us
-              </a>
-            </li>
-          </ul>
           <a href="#" className="flex items-center space-x-2 text-blue-600 bg-blue-50 hover:bg-blue-100 px-4 py-2 rounded-lg font-semibold transition-colors duration-300">
             <LogIn size={16} />
             <span className="hidden sm:inline">Log In</span>
@@ -68,7 +55,7 @@ export default function App() {
       />
     </div>
 
-    <div className="absolute mt-7 inset-0 flex items-center justify-center z-20">
+    <div className="absolute mt-9 inset-0 flex items-center justify-center z-20">
       <Orb
         hoverIntensity={0.8}
         rotateOnHover={true}
@@ -78,11 +65,11 @@ export default function App() {
     </div>
 
     {/* Hero Content */}
-    <div className="z-30 mt-20 text-center pointer-events-none">
-      <h1 className="font-serif text-4xl md:text-7xl font-extrabold text-zinc-50 mb-4 leading-tight">
+    <div className="z-30 mt-25 text-center pointer-events-none">
+      <h1 className="bg-gradient-to-r font-bebas text-transparent from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-4xl md:text-8xl mb-4 leading-tight">
         AI Interview Coach
       </h1>
-      <p className="text-lg md:text-xl text-zinc-200 mb-8">
+      <p className="font-roboto text-lg md:text-2xl text-zinc-200 mb-8 ">
         Train with AI. Interview with confidence.
       </p>
       <Link
@@ -110,22 +97,32 @@ export default function App() {
 
   {/* Cards container centered */}
   <div className="relative z-20 flex w-full h-full items-center justify-center gap-6">
-    <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
-      <div className='flex h-full justify-end pb-20 flex-col items- text-zinc-100 text-center text-lg'>
-        <b className='mb-2 text-3xl'>Ace the Tech Interview</b>
-        <p>Practice real questions. Get instant feedback.</p>
+    <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)">
+      <div className="flex h-full flex-col items-center justify-center">
+        <Clipboard size={200} className="mb-10 text-blue-400" /> 
+        <div>
+          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-3xl">Ace the Tech Interview</b>
+          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-lg">Practice real questions. Get instant feedback.</p>
+        </div>
       </div>
     </SpotlightCard>
+
     <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
-      <div className='flex h-full justify-end pb-20 flex-col items- text-zinc-100 text-center text-lg'>
-        <b className='mb-2 text-3xl'>Sharpen Your Skills</b>
-        <p>Master key concepts. Identify weak spots.</p>
+      <div className="flex h-full flex-col items-center justify-center">
+        <Pencil size={200} className="mb-10 text-blue-500" /> 
+        <div>
+          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-3xl">Sharpen Your Skills</b>
+          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-lg">Master key concepts. Identify weak spots.</p>
+        </div>
       </div>
       </SpotlightCard>
     <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
-      <div className='flex h-full justify-end pb-20 flex-col items- text-zinc-100 text-center text-lg'>
-        <b className='mb-2 text-3xl'>Boost Your Confidence</b>
-        <p>Feel prepared. Interview like a pro.</p>
+      <div className='flex h-full flex-col items-center justify-center'>
+        <Flame size={200} className="mb-10 text-blue-600" /> 
+        <div>
+          <b className='bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent block mb-2 text-3xl'>Boost Your Confidence</b>
+          <p className = 'bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent text-lg'>Feel prepared. Interview like a pro.</p>
+        </div>
       </div>
     </SpotlightCard>
   </div>
