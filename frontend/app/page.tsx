@@ -5,6 +5,7 @@ import LightRays from '@/components/Galaxy';
 import SpotlightCard from '@/components/SpotlightCard';
 import { Button } from '@/components/ui/button';
 import { SignInButton,SignedOut,SignedIn,UserButton } from '@clerk/nextjs';
+import { AcademicCapIcon,PencilIcon,FireIcon } from '@heroicons/react/16/solid';
 import {
   Clipboard,
   Pencil,
@@ -101,7 +102,7 @@ export default function App() {
   <div className="relative z-20 flex w-full h-full items-center justify-center gap-6">
     <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)">
       <div className="flex h-full flex-col items-center justify-center">
-        <Clipboard size={200} className="mb-10 text-blue-400" /> 
+        <AcademicCapIcon className="size-60 mb-10 text-blue-500"/> 
         <div>
           <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-3xl">Ace the Tech Interview</b>
           <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-lg">Practice real questions. Get instant feedback.</p>
@@ -111,7 +112,7 @@ export default function App() {
 
     <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
       <div className="flex h-full flex-col items-center justify-center">
-        <Pencil size={200} className="mb-10 text-blue-500" /> 
+        <Pencil size={220} className="mb-16 text-blue-500" /> 
         <div>
           <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-3xl">Sharpen Your Skills</b>
           <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-lg">Master key concepts. Identify weak spots.</p>
@@ -120,7 +121,7 @@ export default function App() {
       </SpotlightCard>
     <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
       <div className='flex h-full flex-col items-center justify-center'>
-        <Flame size={200} className="mb-10 text-blue-600" /> 
+        <FireIcon className="size-60 mb-10 text-blue-600" /> 
         <div>
           <b className='bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent block mb-2 text-3xl'>Boost Your Confidence</b>
           <p className = 'bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent text-lg'>Feel prepared. Interview like a pro.</p>
