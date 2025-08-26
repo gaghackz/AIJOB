@@ -1,7 +1,8 @@
 "use client"
 import React from "react";
 import AnimatedContent from "@/components/Animated";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton,useUser } from "@clerk/nextjs";
+import { handleClick } from "@/end-func/functions";
 
 
 const roles = [
@@ -15,15 +16,15 @@ const roles = [
   { id: "pm", label: "Product Manager" },
 ]
 
-function handleClick(meow:string){
 
-}
 
 export default function Page(){
+    const user = useUser();
     return (
     <div className="h-screen relative flex flex-col items-center justify-center bg-gradient-to-r from-slate-900 via-indigo-700 to-purple-600">
+       
         <div className="scale-150 mr-5 absolute right-4 top-4 justify-end">
-            <UserButton/>
+            <UserButton/> 
         </div>
         <AnimatedContent >
         <div className="flex flex-col mt-10 items-center h-[40rem] w-[80rem] 
