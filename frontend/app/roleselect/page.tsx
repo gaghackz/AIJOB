@@ -2,7 +2,9 @@
 import React from "react";
 import AnimatedContent from "@/components/Animated";
 import { UserButton,useUser } from "@clerk/nextjs";
-import { handleClick } from "@/end-func/functions";
+import axios from "axios";
+
+
 
 
 const roles = [
@@ -16,12 +18,26 @@ const roles = [
   { id: "pm", label: "Product Manager" },
 ]
 
-
+function handleClick(id:string,primaryEmail?:string){
+   
+    axios.post(`${process.env.NEXT_PUBLIC_DEV}/api/v1/role-select`,{
+        email:primaryEmail,
+        role:id
+    })
+}
 
 export default function Page(){
-    const user = useUser();
+
+    const {user,isLoaded,isSignedIn} = useUser();
+    if (!isLoaded || !isSignedIn) {
+      console.log("User not ready yet.");
+      return;
+    }
+    const primaryEmail = user.primaryEmailAddress?.emailAddress;
+
+
     return (
-    <div className="h-screen relative flex flex-col items-center justify-center bg-gradient-to-r from-slate-900 via-indigo-700 to-purple-600">
+    <div className="h-screen relative flex flex-col items-center justify-center bg-slate-950">
        
         <div className="scale-150 mr-5 absolute right-4 top-4 justify-end">
             <UserButton/> 
@@ -41,7 +57,7 @@ export default function Page(){
                 <button
                     key={role.id}
                     id={role.id}
-                    onClick={() => handleClick(role.id)}
+                    onClick={() => handleClick(role.id,primaryEmail)}
                     className="w-20rem px-6 py-4 rounded-xl bg-slate-700/40 text-white font-medium
                             border border-slate-500/50 shadow-md 
                             hover:bg-indigo-600 hover:scale-105 

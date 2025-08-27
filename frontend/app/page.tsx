@@ -1,10 +1,11 @@
 "use client"
-import React from 'react';
+import React, { useRef,useEffect } from 'react';
 import Orb from '@/components/Orb';
 import LightRays from '@/components/Galaxy';
 import SpotlightCard from '@/components/SpotlightCard';
 import { Button } from '@/components/ui/button';
-import { SignInButton,SignedOut,SignedIn,UserButton } from '@clerk/nextjs';
+import { SignInButton,SignedOut,SignedIn,UserButton,useUser} from '@clerk/nextjs';
+import { syncUserWithBackend } from '@/lib/userApi';
 import { AcademicCapIcon,PencilIcon,FireIcon } from '@heroicons/react/16/solid';
 import {
   Clipboard,
@@ -15,6 +16,37 @@ import Link from 'next/link';
 import Galaxy from '@/components/Galaxy';
 
 export default function App() {
+
+
+  const { isSignedIn, user, isLoaded } = useUser();
+
+  const hasSynced = useRef(false);
+
+  useEffect(() => {
+    
+    if (!isLoaded) {
+      return;
+    }
+
+    
+    if (isSignedIn && user && !hasSynced.current) {
+      const primaryEmail = user.primaryEmailAddress?.emailAddress;
+      if (primaryEmail) {
+        
+        hasSynced.current = true;
+        syncUserWithBackend(primaryEmail);
+      }
+    }
+    
+    
+    if (!isSignedIn) {
+      hasSynced.current = false;
+    }
+
+  }, [isSignedIn, isLoaded, user]);
+
+
+
   return (
     // Main container with full viewport height and flex column layout
     <div className="flex flex-col min-h-screen text-gray-800 font-sans">
@@ -77,7 +109,7 @@ export default function App() {
         Train with AI. Interview with confidence.
       </p>
       <Link
-        href={"/"}
+        href={"/roleselect"}
         className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-blue-700 transition transform hover:scale-105 duration-300 pointer-events-auto"
       >
         Get Started

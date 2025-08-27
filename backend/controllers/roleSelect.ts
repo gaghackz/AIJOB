@@ -35,7 +35,7 @@ export async function roleSelect(req: Request, res: Response) {
       message: "role assigned to User :D",
     });
   } catch (err) {
-    return res.status(404).json({
+    return res.status(500).json({
       success: false,
       message: err,
     });

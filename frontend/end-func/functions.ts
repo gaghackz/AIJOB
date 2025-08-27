@@ -1,6 +1,4 @@
 import axios from "axios";
-import 'dotenv/config';
+import { useUser } from "@clerk/nextjs";
 
-export function handleClick(id:string){
-    
-}
+
