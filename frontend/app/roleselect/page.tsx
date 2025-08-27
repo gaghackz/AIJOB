@@ -3,6 +3,9 @@ import React from "react";
 import AnimatedContent from "@/components/Animated";
 import { UserButton,useUser } from "@clerk/nextjs";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { OrbitProgress } from "react-loading-indicators";
 
 
 
@@ -18,17 +21,39 @@ const roles = [
   { id: "pm", label: "Product Manager" },
 ]
 
-function handleClick(id:string,primaryEmail?:string){
-   
-    axios.post(`${process.env.NEXT_PUBLIC_DEV}/api/v1/role-select`,{
-        email:primaryEmail,
-        role:id
-    })
-}
+
 
 export default function Page(){
 
-    const {user,isLoaded,isSignedIn} = useUser();
+    const router = useRouter();
+    const { user, isLoaded, isSignedIn } = useUser();
+    const [isLoading, setIsLoading] = useState(false); 
+
+    async function handleClick(id:string,primaryEmail?:string){
+        setIsLoading(true);
+        try{
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_DEV}/api/v1/role-select`,{
+                email:primaryEmail,
+                role:id
+            })
+            if (response.data && response.data.success) {
+            console.log("Role selected successfully. Navigating...");
+            router.push("/startpage"); 
+            } else {
+                
+                console.error("API returned an error:", response.data.message);
+                alert("Failed to save your role. Please try again.");
+            }
+            } catch (error) {
+            
+            console.error("An error occurred during the API call:", error);
+            alert("An error occurred. Please try again later.");
+            } finally {
+            setIsLoading(false); 
+        }
+    }
+    
+
     if (!isLoaded || !isSignedIn) {
       console.log("User not ready yet.");
       return;
@@ -52,9 +77,13 @@ export default function Page(){
                 Choose your role for interview
             </h1>
 
+            {isLoading ? 
+            <OrbitProgress color="#b8e2ff" size="medium" text="" textColor="" />
+            :
             <div className="grid grid-cols-3 gap-6 w-full">
                 {roles.map((role) => (
                 <button
+                    
                     key={role.id}
                     id={role.id}
                     onClick={() => handleClick(role.id,primaryEmail)}
@@ -66,7 +95,7 @@ export default function Page(){
                     {role.label}
                 </button>
                 ))}
-            </div>
+            </div>}
         </div>
         </AnimatedContent>
     </div>
