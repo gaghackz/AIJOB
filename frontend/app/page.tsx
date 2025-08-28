@@ -1,19 +1,13 @@
 "use client"
 import React, { useRef,useEffect } from 'react';
 import Orb from '@/components/Orb';
-import LightRays from '@/components/Galaxy';
 import SpotlightCard from '@/components/SpotlightCard';
 import { Button } from '@/components/ui/button';
 import { SignInButton,SignedOut,SignedIn,UserButton,useUser} from '@clerk/nextjs';
 import { syncUserWithBackend } from '@/lib/userApi';
 import { AcademicCapIcon,PencilIcon,FireIcon } from '@heroicons/react/16/solid';
-import {
-  Clipboard,
-  Pencil,
-  Flame
-} from 'lucide-react';
+import { Pencil } from 'lucide-react';
 import Link from 'next/link';
-import Galaxy from '@/components/Galaxy';
 
 export default function App() {
 
@@ -81,14 +75,6 @@ export default function App() {
     
     {/* The Galaxy is now inside this section and will be contained within it */}
     <div className="absolute inset-0 z-10">
-      <Galaxy
-        mouseRepulsion={true}
-        mouseInteraction={true}
-        density={1}
-        glowIntensity={0.2}
-        saturation={0}
-        hueShift={0}
-      />
     </div>
 
     <div className="absolute mt-9 inset-0 flex items-center justify-center z-20">
@@ -120,14 +106,6 @@ export default function App() {
   {/* Feature Cards Section */}
 <section className="relative z-0 snap-start h-screen bg-gradient-to-t from-slate-950 to-slate-900">
   <div className="absolute inset-0 z-10">
-    <Galaxy
-      mouseRepulsion={false}
-      mouseInteraction={false}
-      density={1}
-      glowIntensity={0.2}
-      saturation={0}
-      hueShift={0}
-    />
   </div>
 
   {/* Cards container */}

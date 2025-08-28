@@ -11,10 +11,10 @@ import { OrbitProgress } from "react-loading-indicators";
 
 
 const roles = [
-  { id: "backend", label: "Backend Engineer" },
-  { id: "frontend", label: "Frontend Developer" },
-  { id: "data-analyst", label: "Data Analyst" },
-  { id: "devops", label: "DevOps Engineer" },
+  { id: "backendEngineer", label: "Backend Engineer" },
+  { id: "frontendEngineer", label: "Frontend Developer" },
+  { id: "dataAnalyst", label: "Data Analyst" },
+  { id: "devOps", label: "DevOps Engineer" },
   { id: "ml", label: "ML Engineer" },
   { id: "qa", label: "QA Engineer" },
   { id: "designer", label: "UI/UX Designer" },
