@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "build":"npm i && tsc"
   },
   "dependencies": {
     "@google/genai": "^1.12.0",
