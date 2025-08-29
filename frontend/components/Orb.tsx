@@ -283,7 +283,7 @@ export default function Orb({
       container.removeChild(gl.canvas);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [hue, hoverIntensity, rotateOnHover, forceHoverState]);
+  }, [frag, vert, hue, hoverIntensity, rotateOnHover, forceHoverState]);
 
   return <div ref={ctnDom} className="w-full h-full" />;
 }

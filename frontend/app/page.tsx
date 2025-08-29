@@ -8,7 +8,6 @@ import { syncUserWithBackend } from '@/lib/userApi';
 import { AcademicCapIcon,FireIcon } from '@heroicons/react/16/solid';
 import { Pencil } from 'lucide-react';
 import Link from 'next/link';
-import Galaxy from '@/components/Galaxy';
 
 export default function App() {
 
