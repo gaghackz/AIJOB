@@ -5,9 +5,10 @@ import SpotlightCard from '@/components/SpotlightCard';
 import { Button } from '@/components/ui/button';
 import { SignInButton,SignedOut,SignedIn,UserButton,useUser} from '@clerk/nextjs';
 import { syncUserWithBackend } from '@/lib/userApi';
-import { AcademicCapIcon,PencilIcon,FireIcon } from '@heroicons/react/16/solid';
+import { AcademicCapIcon,FireIcon } from '@heroicons/react/16/solid';
 import { Pencil } from 'lucide-react';
 import Link from 'next/link';
+import Galaxy from '@/components/Galaxy';
 
 export default function App() {
 
@@ -75,6 +76,7 @@ export default function App() {
     
     {/* The Galaxy is now inside this section and will be contained within it */}
     <div className="absolute inset-0 z-10">
+      
     </div>
 
     <div className="absolute mt-9 inset-0 flex items-center justify-center z-20">

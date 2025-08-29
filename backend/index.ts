@@ -7,7 +7,7 @@ import cors from "cors";
 const app = express();
 app.use(express.json());
 const corsOption = {
-  origin: ["http://localhost:4000", ],
+  origin: ["http://localhost:4000", "http://172.18.168.225:4000"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
 };

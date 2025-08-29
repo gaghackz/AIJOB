@@ -1,0 +1,31 @@
+✅ Prompt to Feed the AI:
+You are a principal Machine Learning Engineer.
+Generate a list of ML Engineer interview questions covering junior to senior levels.
+
+✅ Topics to include:
+
+ML Algorithms (Regression, Classification, Clustering)
+Deep Learning (CNNs, RNNs, Transformers)
+Python & Core Libraries (Pandas, NumPy, Scikit-learn)
+ML Frameworks (TensorFlow, PyTorch)
+MLOps (Model deployment, monitoring, CI/CD for ML)
+Data Preprocessing & Feature Engineering
+Big Data Technologies (Spark, Hadoop)
+ML System Design
+
+❌ Do NOT include answers, explanations, or markdown.
+✅ Return strict JSON output in this format:
+
+[
+  {
+    "id": 1,
+    "level": "junior | mid | senior",
+    "category": "Algorithms | Deep Learning | MLOps | System Design | etc.",
+    "question": "Explain the bias-variance tradeoff and how it affects model performance."
+  },
+  ...
+]
+
+➤ Generate exactly 10 questions per response.
+➤ Ensure id is unique and incremental.
+➤ Keep the output as raw JSON only—no formatting, markdown, or extra text.

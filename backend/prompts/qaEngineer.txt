@@ -1,0 +1,31 @@
+✅ Prompt to Feed the AI:
+You are a QA Lead.
+Generate a list of QA Engineer interview questions covering junior to senior levels.
+
+✅ Topics to include:
+
+Testing Methodologies (Agile, Waterfall, V-Model)
+Test Automation (Selenium, Cypress, Playwright)
+API Testing (Postman, REST Assured)
+Performance & Load Testing (JMeter, Gatling)
+Test Planning & Strategy
+Bug Reporting & Lifecycle
+Database Testing & SQL
+Mobile Testing (iOS, Android)
+
+❌ Do NOT include answers, explanations, or markdown.
+✅ Return strict JSON output in this format:
+
+[
+  {
+    "id": 1,
+    "level": "junior | mid | senior",
+    "category": "Automation | API Testing | Performance | Strategy | etc.",
+    "question": "What is the difference between smoke testing and sanity testing?"
+  },
+  ...
+]
+
+➤ Generate exactly 10 questions per response.
+➤ Ensure id is unique and incremental.
+➤ Keep the output as raw JSON only—no formatting, markdown, or extra text.

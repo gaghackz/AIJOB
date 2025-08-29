@@ -27,7 +27,7 @@ export default function Page() {
     }
     setStarting(true)
     try {
-      const res = await axios.post("http://localhost:3000/api/v1/generate-question", { email })
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_DEV}/api/v1/generate-question`, { email })
 
       let questions: unknown = null
       const data = res?.data
@@ -86,16 +86,10 @@ export default function Page() {
                 <b className="text-white text-4xl font-bold tracking-wide mt-4">HELLO {name.toUpperCase()}!</b>
               )}
 
-              <div className="text-white text-center mt-4 max-w-md">
-                {isLoaded && isSignedIn
-                  ? "Click below to start your interview. We'll fetch your questions after you confirm."
-                  : "Please sign in to start the interview."}
-              </div>
-
               <button
                 onClick={handleStartInterview}
                 disabled={!isLoaded || !isSignedIn || starting}
-                className="mt-6 px-6 py-3 rounded-xl bg-blue-600 text-white font-medium
+                className="scale-[150%] px-6 py-3 rounded-xl bg-blue-600 text-white font-medium
                            border border-blue-500/60 shadow-md 
                            hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed
                            transition-all duration-300 ease-in-out"

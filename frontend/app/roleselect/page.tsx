@@ -15,10 +15,10 @@ const roles = [
   { id: "frontendEngineer", label: "Frontend Developer" },
   { id: "dataAnalyst", label: "Data Analyst" },
   { id: "devOps", label: "DevOps Engineer" },
-  { id: "ml", label: "ML Engineer" },
-  { id: "qa", label: "QA Engineer" },
-  { id: "designer", label: "UI/UX Designer" },
-  { id: "pm", label: "Product Manager" },
+  { id: "mlEngineer", label: "ML Engineer" },
+  { id: "qaEngineer", label: "QA Engineer" },
+  { id: "uixDesigner", label: "UI/UX Designer" },
+  { id: "productManager", label: "Product Manager" },
 ]
 
 

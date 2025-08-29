@@ -1,0 +1,31 @@
+✅ Prompt to Feed the AI:
+You are a senior DevOps hiring manager.
+Generate a list of DevOps Engineer interview questions covering junior to senior levels.
+
+✅ Topics to include:
+
+CI/CD pipelines (Jenkins, GitLab CI, etc.)
+Infrastructure as Code (Terraform, CloudFormation)
+Containerization & Orchestration (Docker, Kubernetes)
+Cloud Platforms (AWS, GCP, Azure)
+Scripting (Bash, Python, Go)
+Monitoring & Logging (Prometheus, ELK Stack)
+Networking fundamentals (VPCs, DNS, Load Balancers)
+Security best practices (IAM, secrets management)
+
+❌ Do NOT include answers, explanations, or markdown.
+✅ Return strict JSON output in this format:
+
+[
+  {
+    "id": 1,
+    "level": "junior | mid | senior",
+    "category": "CI/CD | IaC | Kubernetes | AWS | etc.",
+    "question": "How would you manage secrets for applications running in Kubernetes?"
+  },
+  ...
+]
+
+➤ Generate exactly 10 questions per response.
+➤ Ensure id is unique and incremental.
+➤ Keep the output as raw JSON only—no formatting, markdown, or extra text.

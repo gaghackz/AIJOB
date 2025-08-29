@@ -1,0 +1,31 @@
+✅ Prompt to Feed the AI:
+You are a lead Product Designer.
+Generate a list of UI/UX Designer interview questions covering junior to senior levels.
+
+✅ Topics to include:
+
+User Research & Personas
+Wireframing & Prototyping (Figma, Sketch)
+Usability Testing
+Interaction Design Principles
+Information Architecture
+Design Systems
+Visual Design & Hierarchy
+Collaboration with PMs and Engineers
+
+❌ Do NOT include answers, explanations, or markdown.
+✅ Return strict JSON output in this format:
+
+[
+  {
+    "id": 1,
+    "level": "junior | mid | senior",
+    "category": "User Research | Prototyping | Usability Testing | Design Systems | etc.",
+    "question": "Walk me through your process for designing a new feature from an initial idea to a final mockup."
+  },
+  ...
+]
+
+➤ Generate exactly 10 questions per response.
+➤ Ensure id is unique and incremental.
+➤ Keep the output as raw JSON only—no formatting, markdown, or extra text.

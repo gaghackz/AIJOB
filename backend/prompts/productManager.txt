@@ -1,0 +1,31 @@
+✅ Prompt to Feed the AI:
+You are a Director of Product.
+Generate a list of Product Manager interview questions covering junior to senior levels.
+
+✅ Topics to include:
+
+Product Strategy & Vision
+Roadmap & Prioritization (RICE, MoSCoW)
+Market Research & Competitive Analysis
+User Stories & Requirements Gathering
+Data Analysis & Metrics (AARRR, HEART)
+Stakeholder Management
+Go-to-Market (GTM) Strategy
+Product Lifecycle Management
+
+❌ Do NOT include answers, explanations, or markdown.
+✅ Return strict JSON output in this format:
+
+[
+  {
+    "id": 1,
+    "level": "junior | mid | senior",
+    "category": "Strategy | Prioritization | Data Analysis | Stakeholder Management | etc.",
+    "question": "How would you decide whether to build a new feature or improve an existing one?"
+  },
+  ...
+]
+
+➤ Generate exactly 10 questions per response.
+➤ Ensure id is unique and incremental.
+➤ Keep the output as raw JSON only—no formatting, markdown, or extra text.
