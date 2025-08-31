@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "nodemon index.ts",
-    "build":"npm i && tsc"
+    "build":"npm i && tsc && npx prisma generate"
   },
   "dependencies": {
     "@google/genai": "^1.12.0",
