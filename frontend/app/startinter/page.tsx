@@ -100,10 +100,11 @@ export default function InterviewPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 p-6">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-slate-950 p-4 sm:p-6">
+      {/* The change is in the div below */}
+      <div className="w-full">
         <div className="mb-6 text-center">
-          <h1 className="text-3xl font-bold text-white mb-2">Interview Questions</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Interview Questions</h1>
           <p className="text-slate-300">
             Question {currentQuestionIndex + 1} of {questions.length}
           </p>
@@ -124,7 +125,7 @@ export default function InterviewPage() {
             </div>
             <CardTitle className="text-white text-xl">{currentQuestion.question}</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-4 sm:space-y-6">
             <div>
               <label className="block text-sm font-medium text-slate-300 mb-2">Your Answer:</label>
               <Textarea
@@ -149,19 +150,19 @@ export default function InterviewPage() {
               </Card>
             )}
 
-            <div className="flex justify-between items-center pt-4">
+            <div className="flex flex-col-reverse sm:flex-row sm:justify-between items-center pt-4 gap-4 sm:gap-0">
               {/* Previous Button */}
               <Button
                 onClick={handlePreviousQuestion}
                 disabled={currentQuestionIndex === 0}
                 variant="outline"
-                className="text-black border-slate-500 hover:bg-slate-700 hover:text-white"
+                className="w-full sm:w-auto border-slate-500 text-slate-300 hover:bg-slate-700 hover:text-white"
               >
                 Previous
               </Button>
 
               {/* Action Buttons: Submit, Skip, Next */}
-              <div className="flex gap-4">
+              <div className="flex gap-4 w-full sm:w-auto justify-end">
                 {!currentEvaluation ? (
                   <>
                     <Button
@@ -175,13 +176,13 @@ export default function InterviewPage() {
                     <Button
                       onClick={handleSubmitAnswer}
                       disabled={!currentAnswer.trim() || isEvaluating}
-                      className="bg-blue-600 hover:bg-blue-700 text-white"
+                      className="bg-blue-600 hover:bg-blue-700 text-white flex-grow sm:flex-grow-0"
                     >
                       {isEvaluating ? "Evaluating..." : "Submit Answer"}
                     </Button>
                   </>
                 ) : (
-                  <Button onClick={handleNextQuestion} className="bg-green-600 hover:bg-green-700 text-white">
+                  <Button onClick={handleNextQuestion} className="bg-green-600 hover:bg-green-700 text-white w-full sm:w-auto">
                     {currentQuestionIndex < questions.length - 1 ? "Next Question" : "Complete Interview"}
                   </Button>
                 )}

@@ -66,44 +66,46 @@ export default function Page() {
   }
 
   return (
-    <div className="h-screen relative flex flex-col items-center justify-center bg-slate-950">
+    <div className="h-screen relative flex flex-col items-center justify-center bg-slate-950 p-4">
       <AnimatedContent>
         <div
-          className="flex flex-col mt-10 items-center h-[40rem] w-[80rem] 
-            rounded-[2rem] border border-slate-500/40 
+          className="flex flex-col items-center justify-center 
+            w-full max-w-md lg:w-[80rem] lg:max-w-none
+            h-auto lg:h-[40rem] rounded-[2rem] border border-slate-500/40 
             bg-slate-800/40 backdrop-blur-2xl shadow-2xl 
-            p-12 transition-transform duration-500 hover:scale-[1.02]"
+            p-8 lg:p-12 transition-transform duration-500 hover:scale-[1.02]"
         >
-          <div className="mt-15">
-            <div className="flex flex-col justify-center items-center gap-15">
-              <div className="scale-[500%]">
-                <UserButton />
-              </div>
-
-              {!isLoaded ? (
-                <OrbitProgress color={"#b8e2ff"} />
-              ) : (
-                <b className="text-white text-4xl font-bold tracking-wide mt-4">HELLO {name.toUpperCase()}!</b>
-              )}
-
-              <button
-                onClick={handleStartInterview}
-                disabled={!isLoaded || !isSignedIn || starting}
-                className="scale-[150%] px-6 py-3 rounded-xl bg-blue-600 text-white font-medium
-                           border border-blue-500/60 shadow-md 
-                           hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed
-                           transition-all duration-300 ease-in-out"
-                aria-disabled={!isLoaded || !isSignedIn || starting}
-              >
-                {starting ? "Starting..." : "Start the Interview!"}
-              </button>
-
-              {error && (
-                <p className="mt-3 text-red-400 text-sm" role="alert">
-                  {error}
-                </p>
-              )}
+          {/* Note: I removed the outer div with `mt-15` as `justify-center` on the parent achieves a better result. */}
+          <div className="flex flex-col justify-center items-center gap-12 lg:gap-16">
+            <div className="scale-[300%] lg:scale-[500%]">
+              <UserButton />
             </div>
+
+            {!isLoaded ? (
+              <OrbitProgress color={"#b8e2ff"} />
+            ) : (
+              <b className="text-white text-3xl lg:text-4xl font-bold tracking-wide text-center">
+                HELLO {name.toUpperCase()}!
+              </b>
+            )}
+
+            <button
+              onClick={handleStartInterview}
+              disabled={!isLoaded || !isSignedIn || starting}
+              className="lg:scale-[150%] px-6 py-3 rounded-xl bg-blue-600 text-white font-medium
+                         border border-blue-500/60 shadow-md 
+                         hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed
+                         transition-all duration-300 ease-in-out"
+              aria-disabled={!isLoaded || !isSignedIn || starting}
+            >
+              {starting ? "Starting..." : "Start the Interview!"}
+            </button>
+
+            {error && (
+              <p className="mt-3 text-red-400 text-sm text-center" role="alert">
+                {error}
+              </p>
+            )}
           </div>
         </div>
       </AnimatedContent>

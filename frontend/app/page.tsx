@@ -88,8 +88,8 @@ export default function App() {
     </div>
 
     {/* Hero Content */}
-    <div className="z-30 mt-25 text-center pointer-events-none">
-      <h1 className="bg-gradient-to-r font-bebas text-transparent from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-4xl md:text-8xl mb-4 leading-tight">
+    <div className="z-30 mt-25 text-center pointer-events-none px-4">
+      <h1 className="bg-gradient-to-r font-bebas text-transparent from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-5xl md:text-8xl mb-4 leading-tight">
         AI Interview Coach
       </h1>
       <p className="font-roboto bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-lg md:text-2xl mb-8 ">
@@ -105,37 +105,42 @@ export default function App() {
   </section>
 
   {/* Feature Cards Section */}
-<section className="relative z-0 snap-start h-screen bg-gradient-to-t from-slate-950 to-slate-900">
+  {/* Changed h-screen to min-h-screen to allow content to grow */}
+<section className="relative z-0 snap-start min-h-screen py-24 px-4 bg-gradient-to-t from-slate-950 to-slate-900">
   <div className="absolute inset-0 z-10">
   </div>
 
-  {/* Cards container */}
-  <div className="relative z-20 flex w-full h-full items-center justify-center gap-6">
-    <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)">
-      <div className="flex h-full flex-col items-center justify-center">
-        <AcademicCapIcon className="size-60 mb-10 text-blue-500"/> 
+  {/* Cards container: changed to flex-col on mobile, flex-row on large screens */}
+  <div className="relative z-20 flex flex-col lg:flex-row w-full h-full items-center justify-center gap-8 lg:gap-6">
+    {/* Card 1: Made width, icons, and text responsive */}
+    <SpotlightCard className="w-full max-w-sm h-[30rem] lg:w-[28rem]" spotlightColor="rgba(38, 0, 194, 0.4)">
+      <div className="flex h-full flex-col items-center justify-center p-4">
+        <AcademicCapIcon className="size-48 lg:size-60 mb-8 lg:mb-10 text-blue-500"/> 
         <div>
-          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-3xl">Ace the Tech Interview</b>
-          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-lg">Practice real questions. Get instant feedback.</p>
+          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-2xl lg:text-3xl">Ace the Tech Interview</b>
+          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-base lg:text-lg">Practice real questions. Get instant feedback.</p>
         </div>
       </div>
     </SpotlightCard>
-
-    <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
-      <div className="flex h-full flex-col items-center justify-center">
-        <Pencil size={220} className="mb-16 text-blue-500" /> 
+    
+    {/* Card 2: Made width, icons, and text responsive */}
+    <SpotlightCard className="w-full max-w-sm h-[30rem] lg:w-[28rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
+      <div className="flex h-full flex-col items-center justify-center p-4">
+        <Pencil className="w-44 h-44 lg:w-56 lg:h-56 mb-8 lg:mb-16 text-blue-500" /> 
         <div>
-          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-3xl">Sharpen Your Skills</b>
-          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-lg">Master key concepts. Identify weak spots.</p>
+          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-2xl lg:text-3xl">Sharpen Your Skills</b>
+          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-base lg:text-lg">Master key concepts. Identify weak spots.</p>
         </div>
       </div>
       </SpotlightCard>
-    <SpotlightCard className="w-[28rem] h-[30rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
-      <div className='flex h-full flex-col items-center justify-center'>
-        <FireIcon className="size-60 mb-10 text-blue-600" /> 
+      
+    {/* Card 3: Made width, icons, and text responsive */}
+    <SpotlightCard className="w-full max-w-sm h-[30rem] lg:w-[28rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
+      <div className='flex h-full flex-col items-center justify-center p-4'>
+        <FireIcon className="size-48 lg:size-60 mb-8 lg:mb-10 text-blue-600" /> 
         <div>
-          <b className='bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent block mb-2 text-3xl'>Boost Your Confidence</b>
-          <p className = 'bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent text-lg'>Feel prepared. Interview like a pro.</p>
+          <b className='bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent block mb-2 text-2xl lg:text-3xl'>Boost Your Confidence</b>
+          <p className = 'bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent text-base lg:text-lg'>Feel prepared. Interview like a pro.</p>
         </div>
       </div>
     </SpotlightCard>
