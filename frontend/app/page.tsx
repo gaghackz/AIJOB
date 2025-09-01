@@ -113,34 +113,34 @@ export default function App() {
   {/* Cards container: changed to flex-col on mobile, flex-row on large screens */}
   <div className="relative z-20 flex flex-col lg:flex-row w-full h-full items-center justify-center gap-8 lg:gap-6">
     {/* Card 1: Made width, icons, and text responsive */}
-    <SpotlightCard className="w-full max-w-sm h-[30rem] lg:w-[28rem]" spotlightColor="rgba(38, 0, 194, 0.4)">
+    <SpotlightCard className="w-full max-w-xs sm:max-w-sm h-[30rem] lg:w-[28rem]" spotlightColor="rgba(38, 0, 194, 0.4)">
       <div className="flex h-full flex-col items-center justify-center p-4">
-        <AcademicCapIcon className="size-48 lg:size-60 mb-8 lg:mb-10 text-blue-500"/> 
+        <AcademicCapIcon className="size-36 sm:size-48 lg:size-60 mb-6 lg:mb-10 text-blue-500"/> 
         <div>
-          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-2xl lg:text-3xl">Ace the Tech Interview</b>
-          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-base lg:text-lg">Practice real questions. Get instant feedback.</p>
+          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-xl sm:text-2xl lg:text-3xl whitespace-normal break-words">Ace the Tech Interview</b>
+          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-sm sm:text-base lg:text-lg whitespace-normal break-words">Practice real questions. Get instant feedback.</p>
         </div>
       </div>
     </SpotlightCard>
     
     {/* Card 2: Made width, icons, and text responsive */}
-    <SpotlightCard className="w-full max-w-sm h-[30rem] lg:w-[28rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
+    <SpotlightCard className="w-full max-w-xs sm:max-w-sm h-[30rem] lg:w-[28rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
       <div className="flex h-full flex-col items-center justify-center p-4">
-        <Pencil className="w-44 h-44 lg:w-56 lg:h-56 mb-8 lg:mb-16 text-blue-500" /> 
+        <Pencil className="w-32 h-32 sm:w-44 sm:h-44 lg:w-56 lg:h-56 mb-6 lg:mb-16 text-blue-500" /> 
         <div>
-          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-2xl lg:text-3xl">Sharpen Your Skills</b>
-          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-base lg:text-lg">Master key concepts. Identify weak spots.</p>
+          <b className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center block mb-2 text-xl sm:text-2xl lg:text-3xl whitespace-normal break-words">Sharpen Your Skills</b>
+          <p className="bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-transparent text-center text-sm sm:text-base lg:text-lg whitespace-normal break-words">Master key concepts. Identify weak spots.</p>
         </div>
       </div>
       </SpotlightCard>
       
     {/* Card 3: Made width, icons, and text responsive */}
-    <SpotlightCard className="w-full max-w-sm h-[30rem] lg:w-[28rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
+    <SpotlightCard className="w-full max-w-xs sm:max-w-sm h-[30rem] lg:w-[28rem]" spotlightColor="rgba(38, 0, 194, 0.4)" >
       <div className='flex h-full flex-col items-center justify-center p-4'>
-        <FireIcon className="size-48 lg:size-60 mb-8 lg:mb-10 text-blue-600" /> 
+        <FireIcon className="size-36 sm:size-48 lg:size-60 mb-6 lg:mb-10 text-blue-600" /> 
         <div>
-          <b className='bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent block mb-2 text-2xl lg:text-3xl'>Boost Your Confidence</b>
-          <p className = 'bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent text-base lg:text-lg'>Feel prepared. Interview like a pro.</p>
+          <b className='bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent block mb-2 text-xl sm:text-2xl lg:text-3xl whitespace-normal break-words'>Boost Your Confidence</b>
+          <p className = 'bg-gradient-to-b from-zinc-50 to-gray-400 bg-clip-text text-center text-transparent text-sm sm:text-base lg:text-lg whitespace-normal break-words'>Feel prepared. Interview like a pro.</p>
         </div>
       </div>
     </SpotlightCard>
