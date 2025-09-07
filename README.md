@@ -135,6 +135,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📫 Contact
 
-Your Name - [@karanamgagan@gmail.com](https://twitter.com/your_twitter) - karanamgagan@gmail.com
+Your Name - [karanamgagan@gmail.com](mailto:karanamgagan@gmail.com)
 
 Project Link: [https://github.com/gaghackz/AIJOB](https://github.com/gaghackz/AIJOB)
