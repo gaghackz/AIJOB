@@ -135,6 +135,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📫 Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - your.email@example.com
+Your Name - [@karanamgagan@gmail.com](https://twitter.com/your_twitter) - karanamgagan@gmail.com
 
-Project Link: [https://github.com/your-username/interview-iq](https://github.com/your-username/interview-iq)
+Project Link: [https://github.com/gaghackz/AIJOB](https://github.com/gaghackz/AIJOB)
