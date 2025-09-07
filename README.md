@@ -6,7 +6,7 @@ Train with AI. Interview with confidence.
 
 InterviewIQ is a web application designed to help job seekers prepare for technical and behavioral interviews. It leverages the power of Google's Gemini API to generate role-specific questions and provide real-time, constructive feedback on user answers, simulating a realistic interview experience.
 
-[**➡️ View Live Demo**](https://your-live-demo-link.com) (Link not active)
+[**➡️ View Live Demo**](https://interviewiq.site)
 
 ---
 
