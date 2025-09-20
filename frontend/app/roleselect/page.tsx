@@ -70,9 +70,16 @@ export default function Page() {
             p-8 lg:p-12 transition-transform duration-500 hover:scale-[1.02]
             my-10 lg:my-0"
         >
-          <h1 className="text-center text-3xl lg:text-5xl font-extrabold text-white tracking-tight drop-shadow-lg mb-12 lg:mb-20">
+          <div>
+            <h1 className="text-center text-3xl lg:text-5xl font-extrabold text-white tracking-tight drop-shadow-lg mb-12 lg:mb-5">
             Choose your role for interview
-          </h1>
+            </h1>
+            <div className="text-center text-3xl lg:text-sm font-extrabold text-white tracking-tight drop-shadow-lg mb-12 lg:mb-20">
+              (Refresh until it works if you get "failed to load role" error)
+            </div>
+          </div>
+          
+          
 
           {isLoading ? (
             <OrbitProgress color="#b8e2ff" size="medium" text="" textColor="" />
